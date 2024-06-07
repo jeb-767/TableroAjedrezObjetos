@@ -32,11 +32,21 @@ class Peon:
                 else:
                     legal = False
         elif self.posicion[0] != posicion_final[0]:
+            if (self.posicion[0] + 1 == posicion_final[0] or self.posicion[0] - 1 == posicion_final[0]) and self.posicion[1] + numero == posicion_final[1]:
+                legal = True
+            else:
+                legal = False
 
+        if legal == True:
+            if (self.color == "Blanco" and posicion_final[0] == 0) or (self.color == "Negro" and posicion_final[0] == 7):
+                canvioPeon = input("Por que pieza quieres canviar el peon: Reina, Caballo, Alfil o Torre").lower()
+            else:
+                return True
 
     def mover(self, posicion_final):
         if self.movimiento_legal(posicion_final):
             self.tablero[posicion_final[1]][posicion_final[0]] = self
             self.tablero[self.posicion[1]][self.posicion[0]] = ""
+            self.posicion = posicion_final
             return True
         return False

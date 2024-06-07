@@ -1,4 +1,9 @@
 from Piezas.torre import Torre
+from Piezas.Peon import Peon
+from Piezas.alfil import Alfil
+from Piezas.Reina import Reina
+from Piezas.Caballo import Caballo
+from Piezas.Rey import Rey
 from flask import Flask
 from flask_cors import CORS
 
@@ -7,16 +12,37 @@ CORS(app)
 
 ListaPiezas = []
 
-TorreBlanca1 = Torre([0,7] , "Wr1")
-TorreBlanca2 = Torre([7,7], "Wr2")
-TorreNegra1 = Torre([0,0] , "Br1")
-TorreNegra2 = Torre([7,0], "Br2")
+TorreNegra1 = Torre([0,0] , "Br1" , "Negro")
+TorreNegra2 = Torre([7,0], "Br2" , "Negro")
+CaballoNegro1 = Caballo([1,0], "Bn", "Negro")
+CaballoNegro2 = Caballo([6,0], "Bn2", "Negro")
+AlfilNegro1 = Alfil([2,0] , "Bb" , "Negro")
+AlfilNegro2 = Alfil([5,0] , "Bb2" , "Negro")
+ReinaNegra = Reina([3,0] , "Bq" , "Negro")
+
+PeonNegro1 = Peon([0,1] , "Bp" , "Negro")
+PeonNegro2 = Peon([1,1] , "Bp" , "Negro")
+PeonNegro3 = Peon([2,1] , "Bp" , "Negro")
+PeonNegro4 = Peon([3,1] , "Bp" , "Negro")
+PeonNegro5 = Peon([4,1] , "Bp" , "Negro")
+PeonNegro6 = Peon([5,1] , "Bp" , "Negro")
+PeonNegro7 = Peon([6,1] , "Bp" , "Negro")
+PeonNegro8 = Peon([7,1] , "Bp" , "Negro")
+
+TorreBlanca1 = Torre([0,7] , "Wr1" ,"Blanco")
+TorreBlanca2 = Torre([7,7], "Wr2" , "Blanco")
+CaballoBlanco1 = Caballo([1,7] , "Wn" , "Blanco")
+
+
+
+
+ReyNegro = Rey([4,0] , "Bk" , "Negro")
 
 ListaPiezas.append(TorreBlanca1)
 
    #a      b    c      d     e     f     g     h
-tablero = [[TorreNegra1, "Bn", "Bb", "Bq", "Bk", "Bb", "Bn", "Br2"],   #8
-     ["", "Bp", "Bp", "Bp", "Bp", "Bp", "Bp", "Bp"], #  7
+tablero = [[TorreNegra1,CaballoNegro1, AlfilNegro1, ReinaNegra, ReyNegro, AlfilNegro2, CaballoNegro2, TorreNegra2],   #8
+     [PeonNegro1, PeonNegro2, PeonNegro3, PeonNegro4, PeonNegro5, PeonNegro6, PeonNegro7, PeonNegro8], #  7
      ["", "", "", "", "", "", "", ""],  # 6
      ["", "", "", "", "", "", "", ""],  # 5
      ["", "", "", "", "", "", "", ""],  # 4
@@ -36,6 +62,7 @@ for a in tablero:
 def movimiento_externo():
     global movimiento_n
     global blancas
+    Tablero[0][0]=Reina()
 #    datos = request.json
     #movimiento = datos["movimiento"]
     #mov = [0, 0, 0, 0]

@@ -1,4 +1,4 @@
-from Piezas.Peon import Peon
+
 class Torre:
     def __init__(self, posicion , nombre , color):
         self.posicion = posicion
@@ -40,7 +40,7 @@ class Torre:
         if legal == False:
             return False
         else:
-            if self.tablero[posicion_final[1]][posicion_final[0]] == "" :
+            if self.tablero[posicion_final[1]][posicion_final[0]] == "":
                 return True
             elif self.tablero[posicion_final[1]][posicion_final[0]].color != self.color:
                 return True
@@ -51,5 +51,6 @@ class Torre:
         if self.movimiento_legal(movimineto):
             self.tablero[movimineto[1]][movimineto[0]] = self
             self.tablero[self.posicion[1]][self.posicion[0]] = ""
+            self.posicion = movimineto
             return True
         return False
