@@ -32,6 +32,19 @@ PeonNegro8 = Peon([7,1] , "Bp" , "Negro")
 TorreBlanca1 = Torre([0,7] , "Wr1" ,"Blanco")
 TorreBlanca2 = Torre([7,7], "Wr2" , "Blanco")
 CaballoBlanco1 = Caballo([1,7] , "Wn" , "Blanco")
+CaballoBlanco2 = Caballo([6,7] , "Wn" , "Blanco")
+AlfilBlanco1 = Alfil([2,7] , "Wb" , "Blanco")
+AlfilBlanco2 = Alfil([5,7] , "Wb" , "Blanco")
+ReinaBlanca = Reina([3,7] , "Wq" , "Blanco")
+
+PeonNegro1 = Peon([0,1] , "Bp" , "Negro")
+PeonNegro2 = Peon([1,1] , "Bp" , "Negro")
+PeonNegro3 = Peon([2,1] , "Bp" , "Negro")
+PeonNegro4 = Peon([3,1] , "Bp" , "Negro")
+PeonNegro5 = Peon([4,1] , "Bp" , "Negro")
+PeonNegro6 = Peon([5,1] , "Bp" , "Negro")
+PeonNegro7 = Peon([6,1] , "Bp" , "Negro")
+PeonNegro8 = Peon([7,1] , "Bp" , "Negro")
 
 
 
