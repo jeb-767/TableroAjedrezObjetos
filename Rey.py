@@ -21,8 +21,9 @@ class Rey:
         for a in self.piezas:
             if a.color != self.color:
                 if a.nombre[1] == "p":
-                    if a.movimiento_legal[]
-                if a.movimiento_legal(posicion_final):
+                    if a.movimiento_legal[(self.posicion[0] + 1 , self.posicion[1] +1)] or a.movimiento_legal[(self.posicion[0] + 1 , self.posicion[1] - 1)] or a.movimiento_legal[(self.posicion[0] - 1 , self.posicion[1] + 1)] or a.movimiento_legal[(self.posicion[0] - 1 , self.posicion[1] - 1)]:
+                        return False
+                elif a.movimiento_legal(posicion_final):
                     return False
             else:
                 legal = True
