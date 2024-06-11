@@ -37,21 +37,20 @@ AlfilBlanco1 = Alfil([2,7] , "Wb" , "Blanco")
 AlfilBlanco2 = Alfil([5,7] , "Wb" , "Blanco")
 ReinaBlanca = Reina([3,7] , "Wq" , "Blanco")
 
-PeonNegro1 = Peon([0,1] , "Bp" , "Negro")
-PeonNegro2 = Peon([1,1] , "Bp" , "Negro")
-PeonNegro3 = Peon([2,1] , "Bp" , "Negro")
-PeonNegro4 = Peon([3,1] , "Bp" , "Negro")
-PeonNegro5 = Peon([4,1] , "Bp" , "Negro")
-PeonNegro6 = Peon([5,1] , "Bp" , "Negro")
-PeonNegro7 = Peon([6,1] , "Bp" , "Negro")
-PeonNegro8 = Peon([7,1] , "Bp" , "Negro")
+PeonBlanco1 = Peon([0,1] , "Wp" , "Blanco")
+PeonBlanco2 = Peon([1,1] , "Wp" , "Blanco")
+PeonBlanco3 = Peon([2,1] , "Wp" , "Blanco")
+PeonBlanco4 = Peon([3,1] , "Bp" , "Blanco")
+PeonBlanco5 = Peon([4,1] , "Bp" , "Blanco")
+PeonBlanco6 = Peon([5,1] , "Bp" , "Blanco")
+PeonBlanco7 = Peon([6,1] , "Bp" , "Blanco")
+PeonBlanco8 = Peon([7,1] , "Bp" , "Blanco")
 
 
 
 
 ReyNegro = Rey([4,0] , "Bk" , "Negro")
 
-ListaPiezas.append(TorreBlanca1)
 
    #a      b    c      d     e     f     g     h
 tablero = [[TorreNegra1,CaballoNegro1, AlfilNegro1, ReinaNegra, ReyNegro, AlfilNegro2, CaballoNegro2, TorreNegra2],   #8
