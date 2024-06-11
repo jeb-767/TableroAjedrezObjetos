@@ -4,6 +4,7 @@ class Torre:
         self.posicion = posicion
         self.nombre = nombre
         self.color = color
+        self.movimientos = 0
 
     def __str__(self):
         return self.nombre
@@ -52,5 +53,6 @@ class Torre:
             self.tablero[movimineto[1]][movimineto[0]] = self
             self.tablero[self.posicion[1]][self.posicion[0]] = ""
             self.posicion = movimineto
+            self.movimientos += 1
             return True
         return False
