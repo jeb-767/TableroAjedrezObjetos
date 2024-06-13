@@ -11,47 +11,47 @@ class Torre:
 
     def __repr__(self):
         return self.__str__()
-    def setTablero(self, tablero):
+    def SetTablero(self, tablero):
         self.tablero = tablero
         
-    def movimiento_legal(self, posicion_final):
+    def Movimiento_legal(self, posicion_final):
         legal = True
-        if self.posicion[0] == posicion_final[0]:
-            if self.posicion[1] > posicion_final[1]:
+        if self.posicion[1] == posicion_final[1]:
+            if self.posicion[0] > posicion_final[0]:
                 numero = -1
             else:
                 numero = 1
-            for a in range(self.posicion[1], posicion_final[1], numero):
-                A = self.tablero[a][posicion_final[0]]
-                if A != "" and A != self.tablero[self.posicion[1]][self.posicion[0]]:
+            for a in range(self.posicion[0], posicion_final[0], numero):
+                A = self.tablero[a][posicion_final[1]]
+                if A != "" and A != self.tablero[self.posicion[0]][self.posicion[1]]:
                     legal = False
                     break
-        elif self.posicion[1] == posicion_final[1]:
-            if self.posicion[0] < posicion_final[0]:
+        elif self.posicion[0] == posicion_final[0]:
+            if self.posicion[1] < posicion_final[1]:
                 numero = 1
             else:
                 numero = -1
-            for F in range(self.posicion[0], posicion_final[0], numero):
-                A = self.tablero[posicion_final[1]][F]
-                if A != "" and A != self.tablero[self.posicion[1]][self.posicion[0]]:
+            for F in range(self.posicion[1], posicion_final[1], numero):
+                A = self.tablero[posicion_final[0]][F]
+                if A != "" and A != self.tablero[self.posicion[0]][self.posicion[1]]:
                     legal = False
                     break
-        elif self.posicion[0] != posicion_final[0] or self.posicion[1] != posicion_final[1]:
+        elif self.posicion[1] != posicion_final[1] or self.posicion[0] != posicion_final[0]:
             return False
         if legal == False:
             return False
         else:
-            if self.tablero[posicion_final[1]][posicion_final[0]] == "":
+            if self.tablero[posicion_final[0]][posicion_final[1]] == "":
                 return True
-            elif self.tablero[posicion_final[1]][posicion_final[0]].color != self.color:
+            elif self.tablero[posicion_final[0]][posicion_final[1]].color != self.color:
                 return True
             else:
                 return False
 
-    def mover(self, movimineto):
-        if self.movimiento_legal(movimineto):
-            self.tablero[movimineto[1]][movimineto[0]] = self
-            self.tablero[self.posicion[1]][self.posicion[0]] = ""
+    def Mover(self, movimineto):
+        if self.Movimiento_legal(movimineto):
+            self.tablero[movimineto[0]][movimineto[1]] = self
+            self.tablero[self.posicion[0]][self.posicion[1]] = ""
             self.posicion = movimineto
             self.movimientos += 1
             return True

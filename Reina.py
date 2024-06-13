@@ -12,16 +12,16 @@ class Reina:
     def __repr__(self):
         return self.__str__()
 
-    def setTablero(self, tablero):
+    def SetTablero(self, tablero):
         self.tablero = tablero
 
-    def movimiento_legal(self, posicion_final):
-        if Torre.movimiento_legal(self, posicion_final) or Alfil.movimiento_legal(self, posicion_final):
+    def Movimiento_legal(self, posicion_final):
+        if Torre.Movimiento_legal(self, posicion_final) or Alfil.Movimiento_legal(self, posicion_final):
             return True
-    def mover(self, posicion_final):
-        if self.movimiento_legal(posicion_final):
-            self.tablero[posicion_final[1]][posicion_final[0]] = self
-            self.tablero[self.posicion[1]][self.posicion[0]] = ""
+    def Mover(self, posicion_final):
+        if self.Movimiento_legal(posicion_final):
+            self.tablero[posicion_final[0]][posicion_final[1]] = self
+            self.tablero[self.posicion[0]][self.posicion[1]] = ""
             self.posicion = posicion_final
             return True
         return False

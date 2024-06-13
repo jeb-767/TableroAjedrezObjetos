@@ -11,25 +11,25 @@ class Caballo:
     def __repr__(self):
         return self.__str__()
 
-    def setTablero(self, tablero):
+    def SetTablero(self, tablero):
         self.tablero = tablero
-    def movimiento_legal(self, posicion_final):
-        mov1 = posicion_final[0] - self.posicion[0]
-        mov2 = posicion_final[1] - self.posicion[1]
+    def Movimiento_legal(self, posicion_final):
+        mov1 = posicion_final[0] - self.posicion[1]
+        mov2 = posicion_final[0] - self.posicion[1]
         movimiento1 = sqrt((mov1 ** 2) + (mov2 ** 2))
-        if movimiento1 == sqrt(5) and self.posicion[0] != posicion_final[0] and self.posicion[1] != posicion_final[1]:
-            if self.tablero[posicion_final[1]][posicion_final[0]] == "":
+        if movimiento1 == sqrt(5) and self.posicion[1] != posicion_final[1] and self.posicion[0] != posicion_final[0]:
+            if self.tablero[posicion_final[0]][posicion_final[1]] == "":
                 return True
-            elif self.tablero[posicion_final[1]][posicion_final[0]].color != self.color:
+            elif self.tablero[posicion_final[0]][posicion_final[1]].color != self.color:
                 return True
             else:
                 return False
         else:
             return False
-    def mover(self, movimineto):
-        if self.movimiento_legal(movimineto):
-            self.tablero[movimineto[1]][movimineto[0]] = self
-            self.tablero[self.posicion[1]][self.posicion[0]] = ""
+    def Mover(self, movimineto):
+        if self.Movimiento_legal(movimineto):
+            self.tablero[movimineto[0]][movimineto[1]] = self
+            self.tablero[self.posicion[0]][self.posicion[1]] = ""
             self.posicion = movimineto
             return True
         return False
