@@ -1,21 +1,21 @@
-from Piezas.torre import Torre
-from Piezas.Peon import Peon
-from Piezas.alfil import Alfil
-from Piezas.Reina import Reina
-from Piezas.Caballo import Caballo
-from Piezas.Rey import Rey
+from torre import Torre
+from Peon import Peon
+from alfil import Alfil
+from Reina import Reina
+from Caballo import Caballo
+from Rey import Rey
 t1 = Torre([0,0] , "Br1" , "Negro")
-t2 = Torre([7,0] , "Wr1" , "Blanco")
+t2 = Torre([1,0] , "Wr1" , "Blanco")
 a1 = Alfil([7,0] , "Bb" , "Negro")
 r1 = Reina([3,0] , "Bq" , "Negro")
 c1 = Caballo([1,0] , "Bn" , "Negro")
-p1 = Peon([0,6] , "Bp" , "Blanco")
+p1 = Peon([2,3] , "Bp" , "Blanco")
 t3 = Torre([7,0] , "Br2" , "Negro")
 lista = [t1, t2, p1 , a1, r1, c1]
 k1 = Rey([0,4] , "Bk" , "Negro" , lista)
 #a      b    c      d     e     f     g     h
 tablero = [[t1, "", a1, "", k1, "", "", t3],   #8
-     ["", "", "", "", "", "", "", ""], #  7
+     [t2, "", "", "", "", "", "", ""], #  7
      ["", "", "", p1, "", "", "", ""],  # 6
      ["", "", "", "", "", "", "", ""],  # 5
      ["", "", "", "", "", "", "", ""],  # 4

@@ -1,5 +1,5 @@
-from Piezas.torre import Torre
-from Piezas.alfil import Alfil
+from torre import Torre
+from alfil import Alfil
 class Reina:
     def __init__(self, posicion , nombre , color):
         self.posicion = posicion

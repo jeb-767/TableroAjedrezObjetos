@@ -21,19 +21,14 @@ class Rey:
         for a in self.piezas:
             if a.color != self.color:
                 if a.nombre[1] == "p":
-                    if a.color == "Blancas":
-                        numero = -1
-                        numero2 = -2
-                    else:
-                        numero = 1
-                        numero2 = 2
-                    if a.Movimiento_legal[self.posicion[0] + numero , self.posicion[1]]:
+                    if a.matar([posicion_final[0], posicion_final[1]]):
                         return False
-                else:
+                elif a.nombre[1] != "p":
                     if a.Movimiento_legal(posicion_final):
                         return False
-            else:
-                legal = True
+                else:
+
+                    legal = True
         if legal:
             numero = 0
             numero1 = 0
